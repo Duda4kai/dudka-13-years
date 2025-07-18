@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Годовщина Дудка — 13 років</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #f0f4f8 0%, #c9d6e3 100%);
+    margin: 0; padding: 30px; color: #222;
+    display: flex; flex-direction: column; align-items: center;
+  }
+  h1 {
+    color: #2c3e50;
+    margin-bottom: 5px;
+    text-align: center;
+  }
+  p.footer {
+    font-style: italic;
+    color: #555;
+    margin-bottom: 40px;
+  }
+  nav {
+    margin-bottom: 40px;
+  }
+  nav button {
+    margin: 0 12px;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 25px;
+    background-color: #2980b9;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  nav button:hover {
+    background-color: #1f5f8b;
+  }
+  nav button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px #85c1e9;
+  }
+  .section {
+    display: none;
+    max-width: 900px;
+    width: 100%;
+  }
+  .section.active {
+    display: block;
+  }
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+    gap: 15px;
+    margin-bottom: 30px;
+  }
+  .gallery img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transition: transform 0.25s ease;
+  }
+  .gallery img:hover {
+    transform: scale(1.05);
+  }
+  .wishes {
+    background: #fff;
+    padding: 20px 30px;
+    border-radius: 18px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    font-size: 18px;
+    color: #34495e;
+  }
+  .wishes h2 {
+    margin-top: 0;
+    color: #2980b9;
+  }
+
+  /* Лайтбокс */
+  #lightboxOverlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.85);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+  #lightboxOverlay.active {
+    display: flex;
+  }
+  #lightboxOverlay img {
+    max-width: 90vw;
+    max-height: 90vh;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(255,255,255,0.9);
+  }
+  #lightboxOverlay .closeBtn {
+    position: fixed;
+    top: 20px; right: 30px;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    user-select: none;
+    font-weight: bold;
+  }
+</style>
+</head>
+<body>
+
+<h1>Годовщина сім'ї Дудка — 13 років разом</h1>
+<p class="footer">20 липня 2012 — 20 липня 2025</p>
+
+<nav>
+  <button onclick="showSection('mama')">Мама Юлія</button>
+  <button onclick="showSection('papa')">Папа Антон</button>
+  <button onclick="showSection('together')">Разом</button>
+</nav>
+
+<div id="mama" class="section active">
+  <h2>Мама Юлія</h2>
+  <div class="gallery">
+    <img src="mama/photo_2025-07-16_16-42-40.jpg" alt="Юлія фото 1" onclick="openLightbox(this)" />
+    <img src="mama/photo_2025-07-16_16-43-05.jpg" alt="Юлія фото 2" onclick="openLightbox(this)" />
+    <img src="mama/photo_2025-07-16_16-43-15.jpg" alt="Юлія фото 3" onclick="openLightbox(this)" />
+    <img src="mama/photo_2025-07-16_16-43-27.jpg" alt="Юлія фото 4" onclick="openLightbox(this)" />
+    <img src="mama/photo_2025-07-16_16-43-36.jpg" alt="Юлія фото 5" onclick="openLightbox(this)" />
+    <img src="mama/photo_2025-07-16_16-43-48.jpg" alt="Юлія фото 6" onclick="openLightbox(this)" />
+    <img src="mama/photo_2025-07-16_16-44-02.jpg" alt="Юлія фото 7" onclick="openLightbox(this)" />
+    <img src="mama/photo_2025-07-16_16-44-05.jpg" alt="Юлія фото 8" onclick="openLightbox(this)" />
+  </div>
+  <div class="wishes">
+    <h2>Побажання від сина для мами</h2>
+    <p>Мамо, дякую за твою ніжність, турботу і підтримку. Ти — найкраща, нехай у твоєму житті буде безліч світлих моментів і щасливих днів!</p>
+  </div>
+</div>
+
+<div id="papa" class="section">
+  <h2>Папа Антон</h2>
+  <div class="gallery">
+    <img src="papa/photo_2025-07-16_16-42-33.jpg" alt="Антон фото 1" onclick="openLightbox(this)" />
+    <img src="papa/photo_2025-07-16_16-42-45.jpg" alt="Антон фото 2" onclick="openLightbox(this)" />
+    <img src="papa/photo_2025-07-16_16-42-54.jpg" alt="Антон фото 3" onclick="openLightbox(this)" />
+    <img src="papa/photo_2025-07-16_16-42-58.jpg" alt="Антон фото 4" onclick="openLightbox(this)" />
+    <img src="papa/photo_2025-07-16_16-43-01.jpg" alt="Антон фото 5" onclick="openLightbox(this)" />
+    <img src="papa/photo_2025-07-16_16-43-18.jpg" alt="Антон фото 6" onclick="openLightbox(this)" />
+    <img src="papa/photo_2025-07-16_16-43-21.jpg" alt="Антон фото 7" onclick="openLightbox(this)" />
+    <img src="papa/photo_2025-07-16_16-43-39.jpg" alt="Антон фото 8" onclick="openLightbox(this)" />
+    <img src="papa/photo_2025-07-16_16-43-53.jpg" alt="Антон фото 9" onclick="openLightbox(this)" />
+    <img src="papa/photo_2025-07-16_16-44-50.jpg" alt="Антон фото 10" onclick="openLightbox(this)" />
+    <img src="papa/photo_2025-07-16_16-44-54.jpg" alt="Антон фото 11" onclick="openLightbox(this)" />
+  </div>
+  <div class="wishes">
+    <h2>Побажання від сина для тата</h2>
+    <p>Тато, дякую тобі за силу і мудрість, яку ти мені передаєш. Нехай кожен твій день буде наповнений радістю і здоров’ям!</p>
+  </div>
+</div>
+
+<div id="together" class="section">
+  <h2>Разом</h2>
+  <div class="gallery">
+    <img src="together/photo_2025-07-16_16-43-09.jpg" alt="Разом фото 1" onclick="openLightbox(this)" />
+    <img src="together/photo_2025-07-16_16-43-12.jpg" alt="Разом фото 2" onclick="openLightbox(this)" />
+    <img src="together/photo_2025-07-16_16-43-31.jpg" alt="Разом фото 3" onclick="openLightbox(this)" />
+    <img src="together/photo_2025-07-16_16-43-34.jpg" alt="Разом фото 4" onclick="openLightbox(this)" />
+    <img src="together/photo_2025-07-16_16-43-42.jpg" alt="Разом фото 5" onclick="openLightbox(this)" />
+    <img src="together/photo_2025-07-16_16-43-45.jpg" alt="Разом фото 6" onclick="openLightbox(this)" />
+    <img src="together/photo_2025-07-16_16-43-56.jpg" alt="Разом фото 7" onclick="openLightbox(this)" />
+    <img src="together/photo_2025-07-16_16-43-59.jpg" alt="Разом фото 8" onclick="openLightbox(this)" />
+    <img src="together/photo_2025-07-16_16-44-22.jpg" alt="Разом фото 10" onclick="openLightbox(this)" />
+  </div>
+  <div class="wishes">
+    <h2>Побажання від сина для батьків разом</h2>
+    <p>Ви — приклад справжнього кохання і сили родини. Нехай кожен новий рік разом буде ще щасливішим і наповненим приємними спогадами!</p>
+  </div>
+</div>
+
+<!-- Лайтбокс для фото -->
+<div id="lightboxOverlay">
+  <span class="closeBtn">&times;</span>
+  <img src="" alt="Фото в повному розмірі" />
+</div>
+
+<script>
+  function showSection(id) {
+    const sections = document.querySelectorAll('.section');
+    sections.forEach(section => section.classList.remove('active'));
+    const activeSection = document.getElementById(id);
+    if(activeSection) activeSection.classList.add('active');
+  }
+
+  function openLightbox(img) {
+    const lightbox = document.getElementById('lightboxOverlay');
+    const lightboxImg = lightbox.querySelector('img');
+    lightboxImg.src = img.src;
+    lightbox.classList.add('active');
+  }
+
+  document.getElementById('lightboxOverlay').addEventListener('click', function(e) {
+    if(e.target.id === 'lightboxOverlay' || e.target.classList.contains('closeBtn')) {
+      this.classList.remove('active');
+    }
+  });
+</script>
+
+</body>
+</html>
